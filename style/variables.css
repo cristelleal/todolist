@@ -1,0 +1,54 @@
+:root {
+    /*------------------------------------------------------------
+    |
+    | - COLOR
+    |
+    ------------------------------------------------------------*/
+    
+    /* Product  */
+    
+    --color-001 : #1E6F9F;
+    --color-002 : #4EA8DE;
+    --color-003 : #5E60CE;
+    --color-004 : #8284FA;
+
+    /* Base */
+
+    --color-005 : #0D0D0D;
+    --color-006 : #1A1A1A;
+    --color-007 : #262626;
+    --color-008 : #333333;
+    --color-009 : #808080;
+    --color-010 : #D9D9D9;
+    --color-011 : #F2F2F2;
+
+    /* Feedback */
+
+    --color-012 : #E25858;
+
+  
+    /*------------------------------------------------------------
+    |
+    | - TYPOGRAPHY
+    |
+    ------------------------------------------------------------*/
+
+    /* FONT FAMILY */
+  
+    --typography-font-family : 'Inter', sans-serif;
+  
+    /* FONT SIZE */
+  
+    --typography-font-size-001 : 12px;
+    --typography-font-size-002 : 14px;
+    --typography-font-size-003 : 16px;
+
+    /* FONT WEIGHT */
+
+    --typography-font-weight-001 : normal;
+    --typography-font-weight-002 : bold;
+
+    /* LINE HEIGHT */
+
+    --typography-line-height : 140%;
+  }
