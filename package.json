@@ -1,0 +1,23 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cristelleal/todolist.git",
+  "author": "cristelleal <cristelleal@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "eslint:verify": "eslint . --ext .js",
+    "eslint:fix": "eslint . --ext .js --fix"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "parcel": "latest",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  }
+}
