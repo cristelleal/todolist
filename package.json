@@ -6,6 +6,7 @@
   "author": "cristelleal <cristelleal@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build:css": "tailwindcss build ./style/style.css -o ./styles.css",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "eslint:verify": "eslint . --ext .js",

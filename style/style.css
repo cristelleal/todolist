@@ -1,32 +1,12 @@
-@import url('variables.css');
-
-/*--------------------------------------------------------------
-   - FOUNDATION
---------------------------------------------------------------*/
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-::selection {
-  background-color: var(--color-004);
-  color: var(--color-011);
-}
-
-body {
-  margin: 0;
-  height: 100vh;
-  background-color: var(--color-008);
-  color: var(--color-011);
-  font-family: var(--typography-font-family);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /*--------------------------------------------------------------
    - COMPONENTS
 --------------------------------------------------------------*/
+
+#input-section {
+  top: 85%;
+}
+

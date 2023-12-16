@@ -25,30 +25,4 @@
     /* Feedback */
 
     --color-012 : #E25858;
-
-  
-    /*------------------------------------------------------------
-    |
-    | - TYPOGRAPHY
-    |
-    ------------------------------------------------------------*/
-
-    /* FONT FAMILY */
-  
-    --typography-font-family : 'Inter', sans-serif;
-  
-    /* FONT SIZE */
-  
-    --typography-font-size-001 : 12px;
-    --typography-font-size-002 : 14px;
-    --typography-font-size-003 : 16px;
-
-    /* FONT WEIGHT */
-
-    --typography-font-weight-001 : normal;
-    --typography-font-weight-002 : bold;
-
-    /* LINE HEIGHT */
-
-    --typography-line-height : 140%;
   }
