@@ -5,9 +5,11 @@
   "repository": "https://github.com/cristelleal/todolist.git",
   "author": "cristelleal <cristelleal@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build:css": "tailwindcss build ./style/style.css -o ./styles.css",
     "start": "parcel index.html",
+    "start-backend": "node backend/app.js",
     "build": "parcel build index.html",
     "eslint:verify": "eslint . --ext .js",
     "eslint:fix": "eslint . --ext .js --fix"
