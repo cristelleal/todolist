@@ -1,5 +1,5 @@
 import { createServer } from 'node:http';
-import { index, create, remove } from './functions/api/todos.js';
+import { index, create, remove } from './functions/api/todos';
 
 createServer(async (req, res) => {
   try {
@@ -10,7 +10,7 @@ createServer(async (req, res) => {
     switch (endpoint) {
       case 'GET:/todos':
         result = await index(req, res);
-        break; 
+        break;
       case 'POST:/todos':
         result = await create(req, res);
         break;

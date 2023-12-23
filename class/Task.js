@@ -9,4 +9,3 @@ export default class Task {
     return `${this.taskDescription} ${this.state} ${this.id}`;
   }
 }
-

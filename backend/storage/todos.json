@@ -1,4 +1,9 @@
 [
+  {
+    "title": "Une autre tâche",
+    "completed": false,
+    "id": "9e34651c-2276-459e-bf21-6b71f9e0f9bb"
+  },
   { "title": "3e tâche", "completed": false, "id": 1703244081890 },
   { "title": "Ma deuxième tâche", "completed": false, "id": 1703243116576 },
   { "id": 1, "title": "Ma première tâche", "completed": false }

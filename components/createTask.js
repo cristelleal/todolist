@@ -1,4 +1,4 @@
-export function createTask() {
+export default function createTask() {
   const input = document.querySelector('#input');
   const submitButton = document.querySelector('#create-button');
 
