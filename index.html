@@ -13,26 +13,43 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body class="font-inter bg-gray600 relative">
-    <header class="bg-gray700 w-1440 h-200">
+    <header class="bg-gray700 w-144 h-200">
       <div class="flex items-center justify-center h-5/6">
-        <img class="m-3" src="assets/rocket.svg" alt="rocket logo" />
-        <h1>
-          <span class="text-blue text-font-title font-black">to</span
+        <img class="mt-8" src="assets/rocket.svg" alt="rocket logo" />
+        <h1 class="mt-6">
+          <span class="text-blue text-font-title font-black ml-3">to</span
           ><span class="text-purpleDark text-font-title font-black">do</span>
         </h1>
       </div>
     </header>
-    <div class="flex items-center justify-center absolute w-full" id="input-section">
-      <input type="text" name="input" id="input" placeholder="Add a new task" class="flex align-items w-2/5 bg-gray500 text-gray100 placeholder-gray300 border border-gray700 focus:border-purple focus:outline-none p-4 rounded-lg mr-2">
-      <button class="flex items-center justify-center bg-blueDark p-4 rounded-lg text-gray100 font-medium font-s hover:bg-blue transition duration-100">
-        Create 
-        <img src="assets/plus.svg" alt="plus logo" class="ml-2">
-      </button>
-    </div>
-    <main>
+    <main class="flex items-center justify-center">
+      <div
+        class="flex items-center justify-center absolute w-736"
+        id="input-section"
+      >
+        <input
+          type="text"
+          name="input"
+          id="input"
+          placeholder="Add a new task"
+          class="flex align-items w-full p-3 bg-gray500 text-gray100 placeholder-gray300 border border-gray700 focus:border-purple focus:outline-none rounded-lg mr-2"
+        />
+        <button
+          type="submit"
+          class="flex items-center justify-center bg-blueDark p-3 rounded-lg font-medium text-font-l text-gray100 hover:bg-blue"
+          id="create-button"
+        >
+          Create
+          <img src="assets/plus.svg" alt="plus logo" class="ml-2" />
+        </button>
+      </div>
+      <div id="state" class="flex items-center justify-between absolute w-736">
+        <p class="text-blue text-font-m font-semibold" id="tasks">Tasks created <span class="text-gray200 bg-gray-700 rounded-full px-2 text-font-s">0</span></p>
+        <p class="text-purple text-font-m font-semibold" id="completed">Completed <span class="text-gray200 bg-gray-700 rounded-full px-2 text-font-s">0</span></p>
+      </div>
+      <div id="task-container" class="flex-col absolute w-736 border-t border-gray400">
+      </div>
     </main>
     <script type="module" src="./script/main.js"></script>
   </body>
 </html>
-
-
