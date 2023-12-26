@@ -35,10 +35,10 @@
 
 .checkbox,
 .trashbox {
-  display: flex;
-  justify-content: center;
-  align-items: start;
+  margin-right: 4px;
   cursor: pointer;
+  display: flex;
+  align-items: start;
 }
 
 .task-description {
