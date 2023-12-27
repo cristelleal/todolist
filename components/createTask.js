@@ -1,4 +1,5 @@
 import isChecked from './isChecked';
+import keyup from './keyup';
 import removeTask from './removeTask';
 
 export default function createTask() {
@@ -6,6 +7,8 @@ export default function createTask() {
   const submitButton = document.querySelector('#create-button');
   const numberOfTasks = document.querySelector('#tasks');
   const tasksCompleted = document.querySelector('#completed');
+
+  keyup(input, submitButton);
 
   submitButton.addEventListener('click', () => {
     const taskContainer = document.querySelector('#task-container');
@@ -60,5 +63,6 @@ export default function createTask() {
     newTask.appendChild(checkbox);
     newTask.appendChild(task);
     newTask.appendChild(trashbox);
+    input.value = '';
   });
 }
