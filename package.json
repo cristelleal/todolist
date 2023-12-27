@@ -1,7 +1,6 @@
 {
   "name": "todolist",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/cristelleal/todolist.git",
   "author": "cristelleal <cristelleal@gmail.com>",
   "license": "MIT",
@@ -9,7 +8,7 @@
   "scripts": {
     "build:css": "tailwindcss build ./style/style.css -o ./styles.css",
     "start": "rd /s /q .parcel-cache && parcel index.html",
-    "build": "rd /s /q .parcel-cache && parcel build index.html",
+    "build": "parcel build index.html",
     "start-backend": "node backend/app.js",
     "eslint:verify": "eslint . --ext .js",
     "eslint:fix": "eslint . --ext .js --fix"
