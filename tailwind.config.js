@@ -31,13 +31,12 @@ module.exports = {
         'font-title': '40px',
       },
       width: {
-        92: '92px',
-        736: '736px',
         1440: '1440px',
+        92: '92px',
       },
       height: {
-        48: '48px',
         200: '200px',
+        48: '48px',
       },
     },
   },
