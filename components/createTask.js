@@ -1,24 +1,60 @@
+import isChecked from './isChecked';
+import removeTask from './removeTask';
+
 export default function createTask() {
   const input = document.querySelector('#input');
   const submitButton = document.querySelector('#create-button');
+  const numberOfTasks = document.querySelector('#tasks');
+  const tasksCompleted = document.querySelector('#completed');
 
   submitButton.addEventListener('click', () => {
     const taskContainer = document.querySelector('#task-container');
     const yourTask = input.value;
+    numberOfTasks.textContent++;
 
     const newTask = document.createElement('div');
     newTask.className = 'box';
+
     const checkbox = document.createElement('img');
     checkbox.className = 'checkbox';
     checkbox.src = require('../assets/blue-circle.svg');
+
+    const mouseEnterHandler = function () {
+      checkbox.src = require('../assets/dark-blue-circle.svg');
+    };
+
+    const mouseOutHandler = function () {
+      checkbox.src = require('../assets/blue-circle.svg');
+    };
+
+    checkbox.addEventListener('mouseenter', mouseEnterHandler);
+    checkbox.addEventListener('mouseout', mouseOutHandler);
+
+    checkbox.onclick = () => {
+      isChecked(checkbox, task, tasksCompleted);
+      checkbox.removeEventListener('mouseenter', mouseEnterHandler);
+      checkbox.removeEventListener('mouseout', mouseOutHandler);
+    };
 
     const task = document.createElement('p');
     task.className = 'task-description';
     task.textContent = yourTask;
 
     const trashbox = document.createElement('img');
-    trashbox.className = '.trashbox';
+    trashbox.className = 'trashbox';
     trashbox.src = require('../assets/gray-trash.svg');
+
+    trashbox.addEventListener('mouseover', function () {
+      trashbox.src = require('../assets/danger-trash.svg');
+    });
+
+    trashbox.addEventListener('mouseout', function () {
+      trashbox.src = require('../assets/gray-trash.svg');
+    });
+
+    trashbox.onclick = () => {
+      removeTask(task, newTask, numberOfTasks, tasksCompleted);
+    };
 
     taskContainer.appendChild(newTask);
     newTask.appendChild(checkbox);
