@@ -5,10 +5,12 @@
   "repository": "https://github.com/cristelleal/todolist.git",
   "author": "cristelleal <cristelleal@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build:css": "tailwindcss build ./style/style.css -o ./styles.css",
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "start": "rd /s /q .parcel-cache && parcel index.html",
+    "build": "rd /s /q .parcel-cache && parcel build index.html",
+    "start-backend": "node backend/app.js",
     "eslint:verify": "eslint . --ext .js",
     "eslint:fix": "eslint . --ext .js --fix"
   },
@@ -17,7 +19,7 @@
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
-    "parcel": "latest",
+    "parcel": "^2.10.3",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6"
   }
