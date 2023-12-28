@@ -23,5 +23,7 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 0,
+    'global-require': 'off',
+    'no-param-reassign': ['error', { props: false }],
   },
 };

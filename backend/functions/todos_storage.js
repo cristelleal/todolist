@@ -1,5 +1,6 @@
 import { writeFile, readFile } from 'node:fs/promises';
-import { v4 as uuidv4 } from 'uuid';
+
+const { v4: uuidv4 } = require('uuid');
 
 const path = './backend/storage/todos.json';
 
@@ -8,7 +9,7 @@ export async function findTodos() {
     const data = await readFile(path, 'utf8');
     return JSON.parse(data);
   } catch (error) {
-    console.error(error);
+    process.stderr.write(error);
     return [];
   }
 }

@@ -15,8 +15,7 @@ export default function createTask() {
     if (input.value.trim() !== '') {
       const taskContainer = document.querySelector('#task-container');
       const yourTask = input.value;
-      numberOfTasks.textContent++;
-
+      numberOfTasks.textContent = String(Number(numberOfTasks.textContent) + 1);
       const newTask = document.createElement('div');
       newTask.className = 'box';
 
@@ -35,25 +34,25 @@ export default function createTask() {
       checkbox.addEventListener('mouseenter', mouseEnterHandler);
       checkbox.addEventListener('mouseout', mouseOutHandler);
 
+      const task = document.createElement('p');
+      task.className = 'task-description';
+      task.textContent = capitalizeFirstLetter(yourTask);
+
       checkbox.onclick = () => {
         isChecked(checkbox, task, tasksCompleted);
         checkbox.removeEventListener('mouseenter', mouseEnterHandler);
         checkbox.removeEventListener('mouseout', mouseOutHandler);
       };
 
-      const task = document.createElement('p');
-      task.className = 'task-description';
-      task.textContent = capitalizeFirstLetter(yourTask);
-
       const trashbox = document.createElement('img');
       trashbox.className = 'trashbox';
       trashbox.src = require('../assets/gray-trash.svg');
 
-      trashbox.addEventListener('mouseover', function () {
+      trashbox.addEventListener('mouseover', () => {
         trashbox.src = require('../assets/danger-trash.svg');
       });
 
-      trashbox.addEventListener('mouseout', function () {
+      trashbox.addEventListener('mouseout', () => {
         trashbox.src = require('../assets/gray-trash.svg');
       });
 
