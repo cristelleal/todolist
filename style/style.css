@@ -14,6 +14,7 @@
   top: 145%;
 }
 
+
 #task-container {
   top: 165%;
   border-top-left-radius: 10px;
@@ -39,6 +40,8 @@
   cursor: pointer;
   display: flex;
   align-items: start;
+  width: 15px;
+  height: auto;
 }
 
 .task-description {
@@ -57,4 +60,3 @@
   font-size: 14px;
   color: #808080;
 }
-
