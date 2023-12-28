@@ -2,6 +2,7 @@ import isChecked from './isChecked';
 import keyup from './keyup';
 import removeTask from './removeTask';
 import capitalizeFirstLetter from '../script/utils';
+import hidePanel from './hidePannel';
 
 export default function createTask() {
   const input = document.querySelector('#input');
@@ -16,6 +17,9 @@ export default function createTask() {
       const taskContainer = document.querySelector('#task-container');
       const yourTask = input.value;
       numberOfTasks.textContent = String(Number(numberOfTasks.textContent) + 1);
+
+      hidePanel();
+
       const newTask = document.createElement('div');
       newTask.className = 'box';
 

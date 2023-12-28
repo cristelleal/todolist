@@ -39,6 +39,9 @@ module.exports = {
         48: '48px',
         200: '200px',
       },
+      margin: {
+        45: '45%',
+      },
     },
   },
   plugins: [],

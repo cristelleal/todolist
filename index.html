@@ -58,13 +58,26 @@
             id="completed"
             class="text-gray200 bg-gray-700 rounded-full px-2 text-font-s"
             >0</span
-          > 
+          >
         </p>
       </div>
       <div
         id="task-container"
         class="flex-col absolute w-736 border-t border-gray400"
-      ></div>
+      >
+        <div id="empty" class="flex-col text-center">
+          <img
+            src="assets/clipboard.png"
+            alt="note icon"
+            id="note-icon"
+            class="mb-4 mt-16 ml-45"
+          />
+          <p class="text-gray300 font-bold">
+            You don't have any tasks registered yet
+          </p>
+          <p class="text-gray300">Create tasks and organise your to-do items</p>
+        </div>
+      </div>
     </main>
     <script type="module" src="./script/main.js"></script>
   </body>

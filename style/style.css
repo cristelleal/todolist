@@ -32,6 +32,7 @@
   padding: 16px;
   margin-bottom: 8px;
   border: 1px solid #333333;
+  height: auto;
 }
 
 .checkbox,
@@ -59,4 +60,17 @@
   padding: 6px;
   font-size: 14px;
   color: #808080;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.note-icon {
+  width: 20px;
+  height: auto;
 }
