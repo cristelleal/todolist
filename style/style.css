@@ -41,8 +41,8 @@
   cursor: pointer;
   display: flex;
   align-items: start;
-  width: 15px;
-  height: auto;
+  max-width: 15px;
+  max-height: auto;
 }
 
 .task-description {
@@ -71,6 +71,6 @@
 }
 
 .note-icon {
-  max-width: 20px;
-  max-height: auto;
+  width: 20px;
+  height: auto;
 }
