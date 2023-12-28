@@ -1,6 +1,7 @@
 import isChecked from './isChecked';
 import keyup from './keyup';
 import removeTask from './removeTask';
+import capitalizeFirstLetter from '../script/utils';
 
 export default function createTask() {
   const input = document.querySelector('#input');
@@ -11,58 +12,60 @@ export default function createTask() {
   keyup(input, submitButton);
 
   submitButton.addEventListener('click', () => {
-    const taskContainer = document.querySelector('#task-container');
-    const yourTask = input.value;
-    numberOfTasks.textContent++;
+    if (input.value.trim() !== '') {
+      const taskContainer = document.querySelector('#task-container');
+      const yourTask = input.value;
+      numberOfTasks.textContent++;
 
-    const newTask = document.createElement('div');
-    newTask.className = 'box';
+      const newTask = document.createElement('div');
+      newTask.className = 'box';
 
-    const checkbox = document.createElement('img');
-    checkbox.className = 'checkbox';
-    checkbox.src = require('../assets/blue-circle.svg');
-
-    const mouseEnterHandler = function () {
-      checkbox.src = require('../assets/dark-blue-circle.svg');
-    };
-
-    const mouseOutHandler = function () {
+      const checkbox = document.createElement('img');
+      checkbox.className = 'checkbox';
       checkbox.src = require('../assets/blue-circle.svg');
-    };
 
-    checkbox.addEventListener('mouseenter', mouseEnterHandler);
-    checkbox.addEventListener('mouseout', mouseOutHandler);
+      const mouseEnterHandler = function () {
+        checkbox.src = require('../assets/dark-blue-circle.svg');
+      };
 
-    checkbox.onclick = () => {
-      isChecked(checkbox, task, tasksCompleted);
-      checkbox.removeEventListener('mouseenter', mouseEnterHandler);
-      checkbox.removeEventListener('mouseout', mouseOutHandler);
-    };
+      const mouseOutHandler = function () {
+        checkbox.src = require('../assets/blue-circle.svg');
+      };
 
-    const task = document.createElement('p');
-    task.className = 'task-description';
-    task.textContent = yourTask;
+      checkbox.addEventListener('mouseenter', mouseEnterHandler);
+      checkbox.addEventListener('mouseout', mouseOutHandler);
 
-    const trashbox = document.createElement('img');
-    trashbox.className = 'trashbox';
-    trashbox.src = require('../assets/gray-trash.svg');
+      checkbox.onclick = () => {
+        isChecked(checkbox, task, tasksCompleted);
+        checkbox.removeEventListener('mouseenter', mouseEnterHandler);
+        checkbox.removeEventListener('mouseout', mouseOutHandler);
+      };
 
-    trashbox.addEventListener('mouseover', function () {
-      trashbox.src = require('../assets/danger-trash.svg');
-    });
+      const task = document.createElement('p');
+      task.className = 'task-description';
+      task.textContent = capitalizeFirstLetter(yourTask);
 
-    trashbox.addEventListener('mouseout', function () {
+      const trashbox = document.createElement('img');
+      trashbox.className = 'trashbox';
       trashbox.src = require('../assets/gray-trash.svg');
-    });
 
-    trashbox.onclick = () => {
-      removeTask(task, newTask, numberOfTasks, tasksCompleted);
-    };
+      trashbox.addEventListener('mouseover', function () {
+        trashbox.src = require('../assets/danger-trash.svg');
+      });
 
-    taskContainer.appendChild(newTask);
-    newTask.appendChild(checkbox);
-    newTask.appendChild(task);
-    newTask.appendChild(trashbox);
-    input.value = '';
+      trashbox.addEventListener('mouseout', function () {
+        trashbox.src = require('../assets/gray-trash.svg');
+      });
+
+      trashbox.onclick = () => {
+        removeTask(task, newTask, numberOfTasks, tasksCompleted);
+      };
+
+      taskContainer.appendChild(newTask);
+      newTask.appendChild(checkbox);
+      newTask.appendChild(task);
+      newTask.appendChild(trashbox);
+      input.value = '';
+    }
   });
 }
