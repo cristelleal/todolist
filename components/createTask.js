@@ -17,7 +17,6 @@ export default function createTask() {
       const taskContainer = document.querySelector('#task-container');
       const yourTask = input.value;
       numberOfTasks.textContent = String(Number(numberOfTasks.textContent) + 1);
-
       hidePanel();
 
       const newTask = document.createElement('div');

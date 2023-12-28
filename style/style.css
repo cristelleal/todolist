@@ -47,6 +47,7 @@
 
 .task-description {
   display: flex;
+  align-items: start;
   padding: 6px;
   font-size: 14px;
   color: #f2f2f2;

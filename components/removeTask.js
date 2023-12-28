@@ -1,3 +1,6 @@
+import hidePanel from './hidePannel';
+import showPannel from './showPannel';
+
 export default function removeTask(element, container, tasksNumber, status) {
   if (element) {
     const isChecked = element.classList.contains('checked');
@@ -9,5 +12,11 @@ export default function removeTask(element, container, tasksNumber, status) {
     }
   } else {
     throw new Error('Element is not defined');
+  }
+
+  if (parseInt(tasksNumber.textContent, 10) === 0) {
+    showPannel();
+  } else {
+    hidePanel();
   }
 }
