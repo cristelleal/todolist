@@ -46,7 +46,7 @@
 
 .task-description {
   display: flex;
-  align-items: start;
+  align-items: center;
   padding: 6px;
   font-size: 14px;
   color: #f2f2f2;
@@ -55,7 +55,7 @@
 .checked {
   text-decoration: line-through;
   display: flex;
-  align-items: start;
+  align-items: center;
   padding: 6px;
   font-size: 14px;
   color: #808080;
