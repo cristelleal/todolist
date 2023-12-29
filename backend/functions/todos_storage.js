@@ -1,10 +1,9 @@
-import { writeFile, readFile } from 'node:fs/promises';
-
+const { writeFile, readFile } = require('fs').promises;
 const { v4: uuidv4 } = require('uuid');
 
 const path = './backend/storage/todos.json';
 
-export async function findTodos() {
+async function findTodos() {
   try {
     const data = await readFile(path, 'utf8');
     return JSON.parse(data);
@@ -14,14 +13,14 @@ export async function findTodos() {
   }
 }
 
-export async function createTodo({ title, completed = false }) {
+async function createTodo({ title, completed = false }) {
   const todo = { title, completed, id: uuidv4() };
   const todos = [todo, ...(await findTodos())];
   await writeFile(path, JSON.stringify(todos));
   return todo;
 }
 
-export async function removeTodo(id) {
+async function removeTodo(id) {
   const todos = await findTodos();
   const index = todos.findIndex((todo) => todo.id === id);
   if (index !== -1) {
@@ -30,3 +29,5 @@ export async function removeTodo(id) {
   }
   return { id };
 }
+
+module.exports = { findTodos, createTodo, removeTodo };

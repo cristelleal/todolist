@@ -1,5 +1,5 @@
-import { createServer } from 'node:http';
-import { index, create, remove } from './functions/api/todos';
+const { createServer } = require('http');
+const { index, create, remove } = require('./functions/api/todos');
 
 createServer(async (req, res) => {
   try {

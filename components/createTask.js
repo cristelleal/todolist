@@ -26,11 +26,11 @@ export default function createTask() {
       checkbox.className = 'checkbox';
       checkbox.src = require('../assets/blue-circle.svg');
 
-      const mouseEnterHandler = function () {
+      const mouseEnterHandler = () => {
         checkbox.src = require('../assets/dark-blue-circle.svg');
       };
 
-      const mouseOutHandler = function () {
+      const mouseOutHandler = () => {
         checkbox.src = require('../assets/blue-circle.svg');
       };
 
