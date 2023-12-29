@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "/todos",
-      "dest": "http://localhost:3000/todos"
-    }
-  ]
-}
