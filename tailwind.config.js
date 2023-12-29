@@ -38,9 +38,6 @@ module.exports = {
       margin: {
         45: '45%',
       },
-      screens: {
-        xs: '320px',
-      },
     },
   },
   plugins: [],
