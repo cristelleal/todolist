@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body class="font-inter bg-gray600 relative">
-    <header class="bg-gray700 w-144 h-200">
+    <header class="bg-gray700 sm:w-144 h-200">
       <div class="flex items-center justify-center h-5/6">
         <img class="mt-8" src="assets/rocket.svg" alt="rocket logo" />
         <h1 class="mt-6">
@@ -24,7 +24,7 @@
     </header>
     <main class="flex items-center justify-center">
       <div
-        class="flex items-center justify-center absolute w-736"
+        class="flex items-center justify-center absolute sm:w-736"
         id="input-section"
       >
         <input
@@ -32,7 +32,7 @@
           name="input"
           id="input"
           placeholder="Add a new task"
-          class="flex align-items w-full p-3 bg-gray500 text-gray100 placeholder-gray300 border border-gray700 focus:border-purple focus:outline-none rounded-lg mr-2"
+          class="flex align-items sm:w-full p-3 bg-gray500 text-gray100 placeholder-gray300 border border-gray700 focus:border-purple focus:outline-none rounded-lg mr-2"
         />
         <button
           type="submit"
@@ -43,7 +43,7 @@
           <img src="assets/plus.svg" alt="plus logo" class="ml-2" />
         </button>
       </div>
-      <div id="state" class="flex items-center justify-between absolute w-736">
+      <div id="state" class="flex items-center justify-between absolute sm:w-736">
         <p class="text-blue text-font-m font-semibold">
           Tasks created
           <span
@@ -63,7 +63,7 @@
       </div>
       <div
         id="task-container"
-        class="flex-col absolute w-736 border-t border-gray400"
+        class="flex-col absolute sm:w-736 border-t border-gray400"
       >
         <div id="empty" class="flex-col text-center">
           <img

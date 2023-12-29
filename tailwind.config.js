@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './index.html',
-    './script/main.js',
-    './style/**/*.css',
-  ],
+  content: ['./index.html', './script/main.js', './style/**/*.css'],
   theme: {
     extend: {
       colors: {
@@ -41,6 +37,9 @@ module.exports = {
       },
       margin: {
         45: '45%',
+      },
+      screens: {
+        xs: '320px',
       },
     },
   },
