@@ -15,7 +15,8 @@ async function create(req, res) {
 
 // eslint-disable-next-line no-unused-vars
 async function remove(req, res) {
-  const id = await json(req);
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const id = url.pathname.split('/').pop();
   const todo = await removeTodo(id);
   return todo;
 }
