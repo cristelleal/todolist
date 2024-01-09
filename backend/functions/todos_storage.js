@@ -27,6 +27,7 @@ async function removeTodo(id) {
     todos.splice(index, 1);
     await writeFile(path, JSON.stringify(todos));
   }
+  return { id };
 }
 
 module.exports = { findTodos, createTodo, removeTodo };
