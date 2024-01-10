@@ -15,7 +15,7 @@ async function create(req, res) {
 
 // eslint-disable-next-line no-unused-vars
 async function remove(req, res) {
-  const id = await json(req);
+  const { id } = await json(req);
   const todo = await removeTodo(id);
   return todo;
 }
