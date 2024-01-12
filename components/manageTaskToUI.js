@@ -1,9 +1,9 @@
 import capitalizeFirstLetter from '../script/utils';
 import isChecked from './isChecked';
 import removeTask from './removeTask';
+import removeTaskOnServer from './removeTaskOnServer';
 
-// eslint-disable-next-line no-unused-vars
-export default function addTaskToUI(title, taskId) {
+export default function manageTaskToUI(title, id) {
   const input = document.querySelector('#input');
   const numberOfTasks = document.querySelector('#tasks');
   const tasksCompleted = document.querySelector('#completed');
@@ -52,6 +52,7 @@ export default function addTaskToUI(title, taskId) {
 
   trashbox.onclick = () => {
     removeTask(taskElement, newTask, numberOfTasks, tasksCompleted);
+    removeTaskOnServer(id);
   };
 
   newTask.appendChild(checkbox);

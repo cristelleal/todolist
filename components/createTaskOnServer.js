@@ -1,4 +1,4 @@
-import addTaskToUI from './addTaskToUI';
+import manageTaskToUI from './manageTaskToUI';
 
 export default async function createTaskOnServer(title) {
   try {
@@ -11,8 +11,9 @@ export default async function createTaskOnServer(title) {
     });
 
     const newTask = await response.json();
+    const { id } = newTask;
 
-    addTaskToUI(newTask.title, newTask.id);
+    manageTaskToUI(newTask.title, id);
   } catch (error) {
     throw new Error('Error :', error);
   }
