@@ -1,5 +1,5 @@
 const { createServer } = require('http');
-const { index, create, remove } = require('./functions/api/todos');
+const { index, create, remove, update } = require('./functions/api/todos');
 
 createServer(async (req, res) => {
   try {
@@ -26,6 +26,9 @@ createServer(async (req, res) => {
         break;
       case 'DELETE:/todos':
         result = await remove(req, res);
+        break;
+      case 'PUT:/':
+        result = await update(req, res);
         break;
       default:
         res.writeHead(404);

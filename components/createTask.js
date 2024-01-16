@@ -1,6 +1,6 @@
 import keyup from './keyup';
 import hidePanel from './hidePannel';
-import createTaskOnServer from './createTaskOnServer';
+import Client from '../class/Client';
 
 export default function createTask() {
   const input = document.querySelector('#input');
@@ -12,7 +12,7 @@ export default function createTask() {
     if (input.value.trim() !== '') {
       const yourTask = input.value;
       hidePanel();
-      createTaskOnServer(yourTask);
+      Client.createTaskOnServer(yourTask);
     }
   });
 }

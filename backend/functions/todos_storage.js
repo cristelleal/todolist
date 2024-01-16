@@ -30,4 +30,16 @@ async function removeTodo(id) {
   return { id };
 }
 
-module.exports = { findTodos, createTodo, removeTodo };
+async function updateTodo({ id, completed }) {
+  const todos = await findTodos();
+  const index = todos.findIndex((todo) => todo.id === id);
+
+  if (index !== -1) {
+    todos[index].completed = completed;
+    await writeFile(path, JSON.stringify(todos));
+  }
+
+  return todos[index];
+}
+
+module.exports = { findTodos, createTodo, removeTodo, updateTodo };

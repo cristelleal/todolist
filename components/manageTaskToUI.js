@@ -1,7 +1,7 @@
 import capitalizeFirstLetter from '../script/utils';
 import isChecked from './isChecked';
 import removeTask from './removeTask';
-import removeTaskOnServer from './removeTaskOnServer';
+import Client from '../class/Client';
 
 export default function manageTaskToUI(title, id) {
   const input = document.querySelector('#input');
@@ -52,7 +52,7 @@ export default function manageTaskToUI(title, id) {
 
   trashbox.onclick = () => {
     removeTask(taskElement, newTask, numberOfTasks, tasksCompleted);
-    removeTaskOnServer(id);
+    Client.removeTaskOnServer(id);
   };
 
   newTask.appendChild(checkbox);

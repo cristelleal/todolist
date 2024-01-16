@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build:css": "tailwindcss build ./style/style.css -o ./styles.css",
-    "start": "rd /s /q .parcel-cache && parcel index.html",
+    "start": "parcel index.html --no-cache",
     "build": "parcel build index.html",
     "start-backend": "node backend/app.js",
     "eslint:verify": "eslint . --ext .js",
