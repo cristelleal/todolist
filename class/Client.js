@@ -23,10 +23,10 @@ export default class Client {
         },
         body: JSON.stringify({ title }),
       });
-  
+
       const newTask = await response.json();
       const { id } = newTask;
-  
+
       manageTaskToUI(newTask.title, id);
     } catch (error) {
       throw new Error('Error :', error);
@@ -42,7 +42,7 @@ export default class Client {
         },
         body: JSON.stringify({ id }),
       });
-  
+
       if (!response.ok) {
         throw new Error(`Error : ${response.status}`);
       }
@@ -60,9 +60,9 @@ export default class Client {
         },
         body: JSON.stringify({ title, state }),
       });
-      const task = this.tasks.find((task) => task.id === id);
-      task.title = title;
-      task.state = state;
+      const taskId = this.tasks.find((task) => task.id === id);
+      taskId.title = title;
+      taskId.state = state;
     } catch (error) {
       throw new Error('Error :', error);
     }
