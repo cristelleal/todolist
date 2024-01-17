@@ -42,4 +42,6 @@ async function updateTodo({ id, completed }) {
   return todos[index];
 }
 
-module.exports = { findTodos, createTodo, removeTodo, updateTodo };
+module.exports = {
+  findTodos, createTodo, removeTodo, updateTodo,
+};

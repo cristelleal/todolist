@@ -1,5 +1,7 @@
 const { createServer } = require('http');
-const { index, create, remove, update } = require('./functions/api/todos');
+const {
+  index, create, remove, update,
+} = require('./functions/api/todos');
 
 createServer(async (req, res) => {
   try {
