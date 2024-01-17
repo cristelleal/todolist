@@ -16,7 +16,7 @@ export default class Client {
 
   static async createTaskOnServer(title) {
     try {
-      const response = await fetch('http://localhost:3000/todos', {
+      const response = await fetch(`${URL_API}/todos`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,18 +51,15 @@ export default class Client {
     }
   }
 
-  static async updateTaskOnServer(id, title, state) {
+  static async updateTaskOnServer(id, completed) {
     try {
-      await fetch(`${URL_API}/todos?id=${id}`, {
+      await fetch(`${URL_API}/todos`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ title, state }),
+        body: JSON.stringify({ id, completed }),
       });
-      const taskId = this.tasks.find((task) => task.id === id);
-      taskId.title = title;
-      taskId.state = state;
     } catch (error) {
       throw new Error('Error :', error);
     }

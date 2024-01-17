@@ -6,7 +6,7 @@ const {
 createServer(async (req, res) => {
   try {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, POST, GET, DELETE');
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, POST, GET, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     if (req.method === 'OPTIONS') {
@@ -29,7 +29,7 @@ createServer(async (req, res) => {
       case 'DELETE:/todos':
         result = await remove(req, res);
         break;
-      case 'PUT:/':
+      case 'PUT:/todos':
         result = await update(req, res);
         break;
       default:

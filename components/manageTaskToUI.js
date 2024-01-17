@@ -3,7 +3,7 @@ import isChecked from './isChecked';
 import removeTask from './removeTask';
 import Client from '../class/Client';
 
-export default function manageTaskToUI(title, id) {
+export default function manageTaskToUI(title, id, completed) {
   const input = document.querySelector('#input');
   const numberOfTasks = document.querySelector('#tasks');
   const tasksCompleted = document.querySelector('#completed');
