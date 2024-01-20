@@ -15,7 +15,7 @@ export default function manageTaskToUI(title, id, completed) {
 
   const checkbox = document.createElement('img');
   checkbox.className = 'checkbox';
-  checkbox.src = require('../assets/blue-circle.svg');
+  checkbox.src = completed ? require('../assets/purple-check.svg') : require('../assets/blue-circle.svg');
 
   const mouseEnterHandler = () => {
     checkbox.src = require('../assets/dark-blue-circle.svg');
@@ -36,6 +36,7 @@ export default function manageTaskToUI(title, id, completed) {
     isChecked(checkbox, taskElement, tasksCompleted);
     checkbox.removeEventListener('mouseenter', mouseEnterHandler);
     checkbox.removeEventListener('mouseout', mouseOutHandler);
+    Client.updateTaskOnServer(id, checkbox.checked);
   };
 
   const trashbox = document.createElement('img');
