@@ -7,7 +7,7 @@ The sleek and elegant design, in a dark theme, was created by Millena Martins.
 
 ## 🛠️ Run the project 
 
-The front-end can be accessed at: http://localhost:1234/
+The front-end can be accessed at: http://localhost:1234/ - 
 The back-end server is locally hosted at: http://localhost:3000/
 
 ```bash
