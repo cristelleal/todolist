@@ -1,7 +1,11 @@
+require('dotenv').config();
+
 const { createServer } = require('http');
 const {
   index, create, remove, update,
 } = require('./functions/api/todos');
+
+const PORT = process.env.PORT || 3000;
 
 createServer(async (req, res) => {
   try {
@@ -47,4 +51,4 @@ createServer(async (req, res) => {
     res.write(JSON.stringify({ error: 'Internal Server Error' }));
   }
   res.end();
-}).listen(3000);
+}).listen(PORT);

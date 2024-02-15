@@ -1,6 +1,6 @@
 import manageTaskToUI from '../components/manageTaskToUI';
 
-const URL_API = 'http://localhost:3000';
+const URL_API = process.env.API_URL || 'http://localhost:3000';
 
 export default class Client {
   static async getTasks() {
