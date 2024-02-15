@@ -4,6 +4,7 @@
   
 This project allows you to manage your tasks: you can add or remove a task, and mark it as completed when done. 
 The sleek and elegant design, in a dark theme, was created by Millena Martins.
+For this project, I used vanilla JavaScript (with ES6 Modules) and node JS for the server.
 
 ## 🛠️ Run the project 
 
